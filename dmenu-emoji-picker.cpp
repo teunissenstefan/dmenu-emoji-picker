@@ -32,12 +32,13 @@ int main() {
 	text.erase(std::remove(text.begin(), text.end(), '\n'), text.end()); // Remove any newlines, otherwise selecting the emoji will fail
 	//std::cout << "Result: " << text << "EOL" << std::endl;
 	
-	int i = text.length() - 1;
-    while (i != 0 && !isspace(text[i]))
-    {
-      --i;
-    }
-    std::string emoji = text.substr(i+1);
+	//int i = text.length() - 1;
+    //while (i != 0 && !isspace(text[i]))
+    //{
+    //  --i;
+    //}
+    //std::string emoji = text.substr(i+1);
+    std::string emoji = text.substr(0, text.find(" "));
     //std::cout << "Selected: " << emoji << std::endl;
 	
 	copy(emoji);
