@@ -1,6 +1,6 @@
 # dmenu-emoji-picker
 
-A c++ script that I created because the shell script I was using to select emoji with dmenu couldn't correctly copy ZWJ emoji.
+A c++ script that I created because the shell script I was using to select emoji with dmenu couldn't correctly copy [ZWJ emoji](https://en.wikipedia.org/wiki/Zero-width_joiner).
 
 ## Configuration
 
