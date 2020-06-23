@@ -28,10 +28,17 @@ int copy(std::string str){
 }
 
 int main() {
+	std::string notificationCommand;
 	std::string text = exec("cat ~/repos/dmenu-emoji-picker/emoji | dmenu-custom -i -l 10 -p 'Emoji: '");
 	text.erase(std::remove(text.begin(), text.end(), '\n'), text.end()); // Remove any newlines, otherwise selecting the emoji will fail
 	//std::cout << "Result: " << text << "EOL" << std::endl;
 	
+	if(text.empty()){
+		notificationCommand = "notify-send -t 200 'Emoji selection cancelled'";
+    	system(notificationCommand.c_str());
+		return 0;
+	}
+		
 	//int i = text.length() - 1;
     //while (i != 0 && !isspace(text[i]))
     //{
@@ -42,8 +49,8 @@ int main() {
     //std::cout << "Selected: " << emoji << std::endl;
 	
 	copy(emoji);
-	
-	std::string notificationCommand = "notify-send -t 200 '" + emoji + " copied!'";
+
+	notificationCommand = "notify-send -t 200 '" + emoji + " copied!'";
     system(notificationCommand.c_str());
     return 0;
 }
