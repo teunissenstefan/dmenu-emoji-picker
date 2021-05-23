@@ -9,7 +9,7 @@
 #include <sstream>
 
 std::string notificationExecutable = "notify-send";
-std::string dmenuCommand = "dmenu-custom -i -l 10 -p 'Emoji: '";
+std::string dmenuCommand = "dmenu-custom -fn 'Noto Color Emoji' -i -l 10 -p 'Emoji: '";
 std::string emojiFileLocation = "~/repos/dmenu-emoji-picker/emoji";
 
 std::string exec(const char* cmd) {
